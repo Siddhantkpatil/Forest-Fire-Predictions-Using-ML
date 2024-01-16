@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFP</title>
+    <link rel="stylesheet" href="/Users/siddhantpatil/Downloads/FFP-1/static/css/style.css">
+</head>
+<body style="background-image: url('https://media.cntraveler.com/photos/5eb18e42fc043ed5d9779733/16:9/w_2580%2Cc_limit/BlackForest-Germany-GettyImages-147180370.jpg'); 
+
+">  
+
+   <!---{% if result %}
+       <p>{{ result }}</p>
+    {% endif %} -->
+     <form method="post" action="/predict" 
+     style=" margin-left: 550px; border-radius: 10px;">
+     <h1 style="">FOREST FIRE PREDICTIONS</h1>
+        <label>Temperature( Celsius degrees: 22 to 42)</label><br>
+        <input type="text" name="Temperature"><br></br>
+
+        <label>Ws=WindSpeed(km/h: 6 to 29)</label><br>
+        <input type="text" name="Ws"><br></br>
+
+        <label>FFMC=Fine Fuel Moisture Code(28.6 to 92.5)</label><br>
+        <input type="text" name="FFMC"><br></br>
+
+        <label>DMC=Duff Moisture code(1.1 to 65.9)</label><br>
+        <input type="text" name="DMC"><br></br>
+
+        <label>ISI=Initial Spread --Index(0 to 18.5)</label><br>
+        <input type="text" name="ISI"><br></br>
+
+        <input type="submit" value="predict"
+        style="margin-left:50px;" "height:250px;"><br></br>
+        {% if result %}
+        <p>{{ result }}</p>
+     {% endif %}
+
+    </form>
+   
+
+    
+    
+</body>
+</html>
+
+<!--Index(['Temperature', 'Ws', 'FFMC', 'DMC', 'ISI']
+
+result = model.predict(np.array([Temperature, Ws, FFMC, DMC, ISI]).reshape(1,5)) -->
+
+    
